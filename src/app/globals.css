@@ -92,54 +92,6 @@
     --sidebar-ring: var(--primary);
 }
 
-.dark {
-    /* Dark Theme - Forest Green & Beige */
-    --background: oklch(0.15 0.03 150); /* Dark forest green */
-    --foreground: oklch(0.95 0.02 95); /* Light beige text */
-
-    --card: oklch(0.2 0.04 150); /* Darker green for cards */
-    --card-foreground: var(--foreground);
-
-    --popover: oklch(0.2 0.04 150);
-    --popover-foreground: var(--foreground);
-
-    --primary: oklch(0.5 0.14 150); /* Bright forest green */
-    --primary-foreground: var(--background);
-
-    --secondary: oklch(0.25 0.03 150); /* Muted dark green */
-    --secondary-foreground: var(--foreground);
-
-    --muted: oklch(0.22 0.03 150);
-    --muted-foreground: oklch(0.8 0.03 95);
-
-    --accent: oklch(0.3 0.04 150); /* Accent dark green */
-    --accent-foreground: var(--foreground);
-
-    --destructive: oklch(0.55 0.18 30); /* Warm red-brown */
-
-    --border: oklch(0.25 0.03 150);
-    --input: var(--border);
-    --ring: var(--primary);
-
-    /* Charts */
-    --chart-1: var(--primary);
-    --chart-2: oklch(0.7 0.1 95); /* Beige */
-    --chart-3: oklch(0.6 0.12 160); /* Softer green */
-    --chart-4: oklch(0.8 0.04 95); /* Pale beige */
-    --chart-5: oklch(0.35 0.14 150); /* Darker forest green */
-
-    /* Sidebar */
-    --sidebar: oklch(0.18 0.04 150);
-    --sidebar-foreground: var(--foreground);
-    --sidebar-primary: var(--primary);
-    --sidebar-primary-foreground: var(--background);
-    --sidebar-accent: oklch(0.22 0.04 150);
-    --sidebar-accent-foreground: var(--foreground);
-    --sidebar-border: var(--border);
-    --sidebar-ring: var(--primary);
-}
-
-
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -147,4 +99,29 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+::selection {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+}
+
+
+::-webkit-scrollbar {
+    width: 6px; /* scrollbar width */
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--muted); /* track color */
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--muted-foreground); /* scrollbar handle color */
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--muted-foreground); /* darker on hover */
 }

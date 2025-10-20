@@ -3,13 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { buttonVariants } from '@/components/ui/button';
-
-const AllLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/components', label: 'Components' },
-  { href: '/docs', label: 'Documentation' },
-  { href: '/blogs', label: 'Blogs' },
-];
+import { AllLinks } from '@/components/sections/navbar/links';
 
 function NavLinks() {
   const pathname = usePathname();
