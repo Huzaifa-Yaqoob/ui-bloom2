@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { ReactNode } from 'react';
+import HomeLayout from '@/layouts/HomeLayout';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -29,7 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} min-h-svh antialiased`}
       >
-        {children}
+        <HomeLayout>{children}</HomeLayout>
       </body>
     </html>
   );
