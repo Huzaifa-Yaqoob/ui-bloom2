@@ -6,6 +6,7 @@ import LinkSidebar from '@/blocks/article-layout/sidebars/LinkSidebar';
 import LinkSideDrawer from '@/blocks/article-layout/sidebars/LinkSideDrawer';
 import ContentDrawer from '@/blocks/article-layout/sidebars/ContentDrawer';
 import Navbar from '@/components/sections/navbar/Navbar';
+import Section from '@/components/common/Section';
 
 export const ArticleLayoutContext = createContext<any>(null);
 
@@ -40,14 +41,20 @@ export const ArticleLayoutProvider = ({
     >
       <div ref={navbarRef}>
         <Navbar />
+        <Section
+          className={
+            'bg-sidebar m-2 flex items-center justify-between rounded sm:hidden'
+          }
+        >
+          <LinkSideDrawer />
+          <ContentDrawer />
+        </Section>
       </div>
       <div
         className={'flex flex-grow grid-cols-3 gap-4 overflow-y-hidden p-2'}
         style={{ height: `calc(100vh - ${navbarHeight}px)` }}
       >
         <LinkSidebar />
-        {/*<LinkSideDrawer />*/}
-        {/*<ContentDrawer />*/}
         <main
           className={'bg-secondary flex-grow overflow-y-scroll rounded-2xl p-2'}
         >

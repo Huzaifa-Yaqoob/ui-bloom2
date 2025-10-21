@@ -28,7 +28,7 @@ function NavDrawer() {
 
   return (
     <Drawer open={open} onOpenChange={setOpen} direction="bottom">
-      <DrawerTrigger className={'block active:scale-95 sm:hidden'}>
+      <DrawerTrigger className={'block sm:hidden'}>
         <SquareMenu width={32} height={32} className={'text-primary'} />
       </DrawerTrigger>
       <DrawerContent>
