@@ -82,7 +82,7 @@
     --chart-5: oklch(0.35 0.14 150); /* Darker green */
 
     /* Sidebar */
-    --sidebar: oklch(0.96 0.02 95); /* Beige background */
+    --sidebar: oklch(0.874 0.053 100.328); /* Beige background */
     --sidebar-foreground: var(--foreground);
     --sidebar-primary: var(--primary);
     --sidebar-primary-foreground: var(--background);
@@ -110,7 +110,6 @@
     background-color: var(--primary-foreground);
     color: var(--primary);
 }
-
 
 ::-webkit-scrollbar {
     width: 6px; /* scrollbar width */
