@@ -7,11 +7,13 @@ import NavDrawer from '@/components/sections/navbar/NavDrawer';
 function Navbar() {
   return (
     <Section asChild={true} className={'sticky top-0 z-50'}>
-      <nav className={'flex items-center gap-4'}>
-        <UIBloomIcon width={48} height={48} />
-        <NavLinks />
-        <NavFeatures />
+      <nav className={'flex items-center justify-between gap-4'}>
         <NavDrawer />
+        <div className={'flex items-center gap-4'}>
+          <UIBloomIcon width={48} height={48} />
+          <NavLinks />
+        </div>
+        <NavFeatures />
       </nav>
     </Section>
   );

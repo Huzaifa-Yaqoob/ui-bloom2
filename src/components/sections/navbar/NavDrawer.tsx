@@ -1,40 +1,48 @@
 'use client';
 
-import NavLinks from '@/components/sections/navbar/NavLinks';
 import {
   Drawer,
   DrawerContent,
-  DrawerDescription,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer';
 import { AllLinks } from '@/components/sections/navbar/links';
 import Link from 'next/link';
-import { buttonVariants } from '@/components/ui/button';
 import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { BreakPoints, useWindowWidth } from '@/registery/hooks/useWindowWidth';
+import { SquareMenu } from '@/icons/inedx';
 
 function NavDrawer() {
   const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  const windowWidth = useWindowWidth();
+
+  useEffect(() => {
+    // Close the drawer if the screen size becomes larger than 'sm' while it's open
+    if (open && windowWidth && windowWidth > BreakPoints.sm) {
+      setOpen(false);
+    }
+  }, [windowWidth, open]);
 
   return (
-    <Drawer>
-      <DrawerTrigger>Open</DrawerTrigger>
+    <Drawer open={open} onOpenChange={setOpen} direction="bottom">
+      <DrawerTrigger className={'block active:scale-95 sm:hidden'}>
+        <SquareMenu width={32} height={32} className={'text-primary'} />
+      </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader>
-          <DrawerTitle>Are you absolutely sure?</DrawerTitle>
-          <DrawerDescription>This action cannot be undone.</DrawerDescription>
+        <DrawerHeader className={'sr-only'}>
+          <DrawerTitle>Navbar Links</DrawerTitle>
         </DrawerHeader>
-        <div className={'flex flex-col gap-4'}>
+        <div className={'flex flex-col items-start gap-4 p-8'}>
           {AllLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={buttonVariants({
-                variant: 'link',
-                className:
-                  pathname === link.href ? 'text-primary' : 'text-foreground',
-              })}
+              className={`w-full text-left text-lg font-bold hover:underline active:scale-95 ${
+                pathname === link.href ? 'text-primary' : 'text-foreground'
+              }`}
             >
               {link.label}
             </Link>

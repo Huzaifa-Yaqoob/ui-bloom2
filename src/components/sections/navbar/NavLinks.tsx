@@ -9,7 +9,7 @@ function NavLinks() {
   const pathname = usePathname();
 
   return (
-    <div className={'flex flex-grow items-center gap-4'}>
+    <div className={'hidden flex-grow items-center gap-4 sm:flex'}>
       {AllLinks.map((link) => (
         <Link
           key={link.href}
