@@ -10,6 +10,7 @@ import {
 import { LinkMenu } from '@/icons/inedx';
 import { useEffect, useState } from 'react';
 import { BreakPoints, useWindowWidth } from '@/registery/hooks/useWindowWidth';
+import PageLinks from '@/blocks/article-layout/sidebars/PageLinks';
 
 function LinkSideDrawer() {
   const [open, setOpen] = useState(false);
@@ -29,9 +30,9 @@ function LinkSideDrawer() {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className={'p-4'}>
-          <DrawerTitle>Navigation</DrawerTitle>
+          <DrawerTitle className={'sr-only'}>Page Links Sidebar</DrawerTitle>
         </DrawerHeader>
-        {/* You can map over your navigation links here */}
+        <PageLinks />
       </DrawerContent>
     </Drawer>
   );

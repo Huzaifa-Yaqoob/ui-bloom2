@@ -10,6 +10,7 @@ import {
 import { ContentMenu } from '@/icons/inedx';
 import { useEffect, useState } from 'react';
 import { BreakPoints, useWindowWidth } from '@/registery/hooks/useWindowWidth';
+import ContentLink from '@/blocks/article-layout/sidebars/ContentLink';
 
 function ContentDrawer() {
   const [open, setOpen] = useState(false);
@@ -29,9 +30,9 @@ function ContentDrawer() {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className={'p-4'}>
-          <DrawerTitle>On this page</DrawerTitle>
+          <DrawerTitle className={'sr-only'}>Page Content SideBar</DrawerTitle>
         </DrawerHeader>
-        {/* You can map over your content links (headings) here */}
+        <ContentLink />
       </DrawerContent>
     </Drawer>
   );

@@ -1,6 +1,14 @@
 'use client';
 
-import { createContext, ReactNode, useState, useRef, useEffect } from 'react';
+import {
+  createContext,
+  ReactNode,
+  useState,
+  useRef,
+  useEffect,
+  SetStateAction,
+  Dispatch,
+} from 'react';
 import ContentSidebar from '@/blocks/article-layout/sidebars/ContentSidebar';
 import LinkSidebar from '@/blocks/article-layout/sidebars/LinkSidebar';
 import LinkSideDrawer from '@/blocks/article-layout/sidebars/LinkSideDrawer';
@@ -8,7 +16,23 @@ import ContentDrawer from '@/blocks/article-layout/sidebars/ContentDrawer';
 import Navbar from '@/components/sections/navbar/Navbar';
 import Section from '@/components/common/Section';
 
-export const ArticleLayoutContext = createContext<any>(null);
+export interface Link {
+  name: string;
+  href: string;
+  childLinks?: Link[];
+}
+
+export interface ArticleLayoutContextType {
+  state: any;
+  setState: Dispatch<SetStateAction<any>>;
+  sideNavLinks: Link[];
+  setSideNavLinks: Dispatch<SetStateAction<Link[]>>;
+  contentLinks: Link[];
+  setContentLinks: Dispatch<SetStateAction<Link[]>>;
+}
+
+export const ArticleLayoutContext =
+  createContext<ArticleLayoutContextType | null>(null);
 
 export const ArticleLayoutProvider = ({
   children,
@@ -16,8 +40,8 @@ export const ArticleLayoutProvider = ({
   children: ReactNode;
 }) => {
   const [state, setState] = useState<any>(null);
-  const [navLinks, setNavLinks] = useState<boolean>(false);
-  const [contentLinks, setContentLinks] = useState<boolean>(false);
+  const [sideNavLinks, setSideNavLinks] = useState<Link[]>([]);
+  const [contentLinks, setContentLinks] = useState<Link[]>([]);
   const navbarRef = useRef<HTMLDivElement>(null);
   const [navbarHeight, setNavbarHeight] = useState(0);
 
@@ -33,8 +57,8 @@ export const ArticleLayoutProvider = ({
       value={{
         state,
         setState,
-        navLinks,
-        setNavLinks,
+        sideNavLinks,
+        setSideNavLinks,
         contentLinks,
         setContentLinks,
       }}
