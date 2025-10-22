@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react';
 import { BreakPoints, useWindowWidth } from '@/registery/hooks/useWindowWidth';
 import ContentLink from '@/blocks/article-layout/sidebars/ContentLink';
 
-function ContentDrawer() {
+function ContentDrawer({ fromSideBar = false }: { fromSideBar: boolean }) {
   const [open, setOpen] = useState(false);
   const windowWidth = useWindowWidth();
 
@@ -26,10 +26,17 @@ function ContentDrawer() {
   return (
     <Drawer direction={'right'} open={open} onOpenChange={setOpen}>
       <DrawerTrigger>
-        <ContentMenu />
+        {fromSideBar ? (
+          <div className={'flex items-center gap-2'}>
+            <ContentMenu />
+            <span className={'font-bold'}>Content Menu</span>
+          </div>
+        ) : (
+          <ContentMenu />
+        )}
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader className={'p-4'}>
+        <DrawerHeader>
           <DrawerTitle className={'sr-only'}>Page Content SideBar</DrawerTitle>
         </DrawerHeader>
         <ContentLink />

@@ -29,7 +29,7 @@ function LinkSideDrawer() {
         <LinkMenu />
       </DrawerTrigger>
       <DrawerContent>
-        <DrawerHeader className={'p-4'}>
+        <DrawerHeader>
           <DrawerTitle className={'sr-only'}>Page Links Sidebar</DrawerTitle>
         </DrawerHeader>
         <PageLinks />

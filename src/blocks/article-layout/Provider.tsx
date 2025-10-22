@@ -75,7 +75,7 @@ export const ArticleLayoutProvider = ({
         </Section>
       </div>
       <div
-        className={'flex flex-grow grid-cols-3 gap-4 overflow-y-hidden p-2'}
+        className={'flex flex-grow grid-cols-3 gap-2 overflow-y-hidden p-2'}
         style={{ height: `calc(100vh - ${navbarHeight}px)` }}
       >
         <LinkSidebar />
