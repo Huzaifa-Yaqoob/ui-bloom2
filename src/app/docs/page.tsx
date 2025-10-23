@@ -14,7 +14,7 @@ function Components() {
       <DocFooter
         nextLink={{
           name: 'Components',
-          href: '/components/all',
+          href: '/docs/components',
         }}
         prevLink={null}
       />

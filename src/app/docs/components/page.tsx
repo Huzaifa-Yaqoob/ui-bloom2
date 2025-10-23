@@ -13,7 +13,7 @@ function Page() {
       <GithubContribute />
       <DocFooter
         nextLink={{
-          href: '/components/field-renderer',
+          href: '/docs/field-renderer',
           name: 'Field Renderer',
         }}
         prevLink={{

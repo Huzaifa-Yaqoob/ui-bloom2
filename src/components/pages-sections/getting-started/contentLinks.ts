@@ -14,11 +14,11 @@ const contentLinks: Link[] = [
         name: 'update component.json',
       },
       {
-        href: '#installation-add-components',
+        href: '#installation-add-docs',
         name: 'Add Components to Your Project',
       },
       {
-        href: '#installation-using-components',
+        href: '#installation-using-docs',
         name: 'Using Your First Component',
       },
     ],

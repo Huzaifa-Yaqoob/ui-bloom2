@@ -325,7 +325,7 @@ function getClassNames(
   };
 }
 
-// custom components
+// custom docs
 function CustomClearIndicator(props: ClearIndicatorProps) {
   return (
     <components.ClearIndicator {...props}>

@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'UI Bloom',
   description:
-    'UI registry for shadcn with amazing components an hooks for your project',
+    'UI registry for shadcn with amazing docs an hooks for your project',
 };
 
 export default function RootLayout({

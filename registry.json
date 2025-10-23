@@ -4,6 +4,98 @@
   "homepage": "https://ui-bloom.vercel.app/",
   "items": [
     {
+      "name": "password-input",
+      "type": "registry:ui",
+      "title": "Password Input",
+      "description": "A password input field with a toggle option to show or hide the password.",
+      "registryDependencies": ["form"],
+      "files": [
+        {
+          "path": "src/registry/components/password-input/password-input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui-bloom/password-input.tsx"
+        }
+      ],
+      "css": {
+        "@layer base": {
+          "input[type='password']::-ms-reveal": {
+            "display": "none"
+          },
+          "input[type='password']::-ms-clear": {
+            "display": "none"
+          }
+        }
+      }
+    },
+    {
+      "name": "field-renderer",
+      "type": "registry:ui",
+      "title": "Field Renderer",
+      "description": "A password input field with a toggle option to show or hide the password.",
+      "registryDependencies": ["form"],
+      "files": [
+        {
+          "path": "src/registry/components/field-renderer/field-renderer.tsx",
+          "type": "registry:ui",
+          "target": "components/ui-bloom/field-renderer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "react-select-input",
+      "type": "registry:ui",
+      "title": "React Select",
+      "description": "A customizable select component built with react-select that integrates seamlessly with shadcn/ui, supporting multi-select, form validation, and dynamic option creation.",
+      "dependencies": ["react-select@5.10.1"],
+      "files": [
+        {
+          "path": "src/registry/components/react-select-input/react-select-input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui-bloom/react-select-input.tsx"
+        }
+      ],
+      "css": {
+        "@layer utilities": {
+          ".no-scrollbar": {
+            "scrollbar-width": "none",
+            "-ms-overflow-style": "none"
+          },
+          ".no-scrollbar::-webkit-scrollbar": {
+            "display": "none"
+          }
+        }
+      }
+    },
+    {
+      "name": "useWindowWidth",
+      "type": "registry:hook",
+      "title": "useWindowWidth Hook",
+      "description": "This is a custom React hook implementation that provides real-time window width tracking functionality.",
+      "files": [
+        {
+          "path": "src/registry/hooks/useWindowWidth.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "logical-pagination",
+      "type": "registry:ui",
+      "title": "Logical Pagination",
+      "description": "A password input field with a toggle option to show or hide the password.",
+      "files": [
+        {
+          "path": "src/registry/components/logical-pagination/logical-pagination.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/bloom/logical-pagination.tsx"
+        },
+        {
+          "path": "src/registry/hooks/useWindowWidth.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
       "name": "typography",
       "type": "registry:ui",
       "title": "Typography",
@@ -12,7 +104,19 @@
         {
           "path": "src/registry/components/typography/typography.tsx",
           "type": "registry:ui",
-          "target": "components/ui-bloom/typography.tsx"
+          "target": "components/ui/bloom/typography.tsx"
+        }
+      ]
+    },
+    {
+      "name": "useAsyncRunner",
+      "type": "registry:hook",
+      "title": "useAsyncRunner Hook",
+      "description": "hook is a reusable utility for executing async functions with built-in state management for loading, success, failure, and error handling—all fully type-safe without using any.",
+      "files": [
+        {
+          "path": "src/registry/hooks/useAsyncRunner.ts",
+          "type": "registry:hook"
         }
       ]
     }

@@ -5,11 +5,11 @@ import allComponentLinks from '@/components/pages-sections/all-components/allCom
 const navSideLinks = [
   {
     name: 'Getting Started',
-    href: '/components',
+    href: '/docs',
   },
   {
     name: 'Components',
-    href: '/components/all',
+    href: '/docs/components',
     childLinks: allComponentLinks,
   },
 ];
