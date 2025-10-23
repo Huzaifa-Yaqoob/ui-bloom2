@@ -35,6 +35,16 @@ const code = `{
   }
 }`;
 
+const exampleCode = `import { FieldRenderer } from "@/components/ui/field-renderer"
+
+export default function Example() {
+  return (
+    <div className="max-w-sm p-4">
+      <FieldRenderer label="Username" placeholder="Enter your username" />
+    </div>
+  )
+}`;
+
 function Installation() {
   const { setContentLinks } = useArticleLayout();
 
@@ -52,6 +62,10 @@ function Installation() {
           {
             name: 'Add components',
             href: '#installation-add-components',
+          },
+          {
+            name: 'Using a component',
+            href: '#installation-using-components',
           },
         ],
       },
@@ -80,7 +94,7 @@ function Installation() {
           .
         </P>
       </div>
-      <div id="installation-update-component-json" className="space-y-0">
+      <div id="installation-update-component-json" className={'mt-4'}>
         <span className="space-x-2">
           <H4 className="inline-block">Update</H4>
           <Code className="inline-block" asChild={true}>
@@ -98,7 +112,7 @@ function Installation() {
         </P>
         <CodeBlock code={code} lang="json" filename="component.json" />
       </div>
-      <div id="installation-add-components">
+      <div id="installation-add-components" className={'mt-4'}>
         <H4>Add Components to Your Project</H4>
 
         <P>
@@ -145,6 +159,28 @@ function Installation() {
           By following this approach, you’ll be aligned with the best practices
           used across our registry — making future installations and
           integrations simpler and more predictable.
+        </P>
+      </div>
+      <div id="installation-using-components" className={'mt-4'}>
+        <H4>Using Your First Component</H4>
+
+        <P>
+          Once a component is added, it will appear in your{' '}
+          <Code>components/ui</Code> directory (or your configured components
+          path). You can import and start using it right away in your
+          application.
+        </P>
+
+        <CodeBlock
+          code={exampleCode}
+          lang="tsx"
+          filename="app/example/page.tsx"
+        />
+
+        <P>
+          That’s it! You’ve successfully installed and rendered your first
+          component from the registry. You can now explore more components,
+          utilities, and hooks to build faster and with greater consistency.
         </P>
       </div>
     </Section>
