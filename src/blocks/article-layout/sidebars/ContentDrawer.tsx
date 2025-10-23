@@ -12,7 +12,7 @@ import { useEffect, useState } from 'react';
 import { BreakPoints, useWindowWidth } from '@/registery/hooks/useWindowWidth';
 import ContentLink from '@/blocks/article-layout/sidebars/ContentLink';
 
-function ContentDrawer({ fromSideBar = false }: { fromSideBar: boolean }) {
+function ContentDrawer({ fromSideBar = false }: { fromSideBar?: boolean }) {
   const [open, setOpen] = useState(false);
   const windowWidth = useWindowWidth();
 

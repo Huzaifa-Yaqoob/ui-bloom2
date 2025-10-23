@@ -35,12 +35,14 @@ export const ArticleLayoutContext =
   createContext<ArticleLayoutContextType | null>(null);
 
 export const ArticleLayoutProvider = ({
+  navSideLinks,
   children,
 }: {
+  navSideLinks: Link[];
   children: ReactNode;
 }) => {
   const [state, setState] = useState<any>(null);
-  const [sideNavLinks, setSideNavLinks] = useState<Link[]>([]);
+  const [sideNavLinks, setSideNavLinks] = useState<Link[]>(navSideLinks);
   const [contentLinks, setContentLinks] = useState<Link[]>([]);
   const navbarRef = useRef<HTMLDivElement>(null);
   const [navbarHeight, setNavbarHeight] = useState(0);

@@ -1,9 +1,5 @@
-'use client';
-
 import { Code, H2, H4, P } from '@/registery/components/typography/typography';
 import Section from '@/components/common/Section';
-import { useEffect } from 'react';
-import { useArticleLayout } from '@/blocks/article-layout/useArticleLayout';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import CodeBlock from '@/blocks/code-blocks/CodeBlock';
@@ -48,32 +44,6 @@ export default function Example() {
 }`;
 
 function Installation() {
-  const { setContentLinks } = useArticleLayout();
-
-  useEffect(() => {
-    setContentLinks((prev) => [
-      ...prev,
-      {
-        name: 'Installation',
-        href: '#installation-getting-started',
-        childLinks: [
-          {
-            name: 'Update component.json',
-            href: '#installation-update-component-json',
-          },
-          {
-            name: 'Add components',
-            href: '#installation-add-components',
-          },
-          {
-            name: 'Using a component',
-            href: '#installation-using-components',
-          },
-        ],
-      },
-    ]);
-  }, []);
-
   return (
     <Section id={'installation-getting-started'}>
       <H2>Installation</H2>

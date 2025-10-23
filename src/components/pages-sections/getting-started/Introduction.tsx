@@ -1,27 +1,7 @@
-'use client';
-
 import { H2, P } from '@/registery/components/typography/typography';
 import Section from '@/components/common/Section';
-import { useArticleLayout } from '@/blocks/article-layout/useArticleLayout';
-import { useEffect } from 'react';
 
 function Introduction() {
-  const { setContentLinks } = useArticleLayout();
-
-  useEffect(() => {
-    const link = {
-      href: '#introduction-getting-started',
-      name: 'Introduction',
-    };
-    setContentLinks((prev) => [...prev, link]);
-
-    // Cleanup function to remove the link when the component unmounts
-    return () => {
-      setContentLinks((prev) => prev.filter((l) => l.href !== link.href));
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [setContentLinks]);
-
   return (
     <Section id="introduction-getting-started">
       <H2>Introduction</H2>
