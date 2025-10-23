@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/drawer';
 import { LinkMenu } from '@/icons';
 import { useEffect, useState } from 'react';
-import { BreakPoints, useWindowWidth } from '@/registery/hooks/useWindowWidth';
+import { BreakPoints, useWindowWidth } from '@/registry/hooks/useWindowWidth';
 import PageLinks from '@/blocks/article-layout/sidebars/PageLinks';
 
 function LinkSideDrawer() {

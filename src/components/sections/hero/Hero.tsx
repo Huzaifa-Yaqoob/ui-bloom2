@@ -1,7 +1,7 @@
 'use client';
 
 import Section from '@/components/common/Section';
-import { Title, H1 } from '@/registery/components/typography/typography';
+import { Title, H1 } from '@/registry/components/typography/typography';
 
 function Hero() {
   return (

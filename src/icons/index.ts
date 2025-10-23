@@ -10,3 +10,4 @@ export { JsonFile } from './JsonFile';
 export { ReactFile } from './ReactFile';
 export { DefaultFile } from './DefaultFile';
 export { Info } from './Info';
+export { Bulb } from './Bulb';

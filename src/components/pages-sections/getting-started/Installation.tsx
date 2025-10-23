@@ -1,4 +1,4 @@
-import { Code, H2, H4, P } from '@/registery/components/typography/typography';
+import { Code, H2, H4, P } from '@/registry/components/typography/typography';
 import Section from '@/components/common/Section';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';

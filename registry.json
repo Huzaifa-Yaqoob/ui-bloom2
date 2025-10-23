@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ui-bloom",
+  "homepage": "https://ui-bloom.vercel.app/",
+  "items": [
+    {
+      "name": "typography",
+      "type": "registry:ui",
+      "title": "Typography",
+      "description": "A comprehensive set of typography components including headings (H1-H6), paragraphs, blockquotes, code blocks, and text variants with responsive sizing and styling.",
+      "files": [
+        {
+          "path": "src/registry/components/typography/typography.tsx",
+          "type": "registry:ui",
+          "target": "components/ui-bloom/typography.tsx"
+        }
+      ]
+    }
+  ]
+}

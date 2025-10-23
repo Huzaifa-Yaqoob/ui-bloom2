@@ -11,7 +11,7 @@ import { AllLinks } from '@/components/sections/navbar/links';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { BreakPoints, useWindowWidth } from '@/registery/hooks/useWindowWidth';
+import { BreakPoints, useWindowWidth } from '@/registry/hooks/useWindowWidth';
 import { SquareMenu } from '@/icons';
 
 function NavDrawer() {

@@ -1,5 +1,6 @@
 import { ReactNode } from 'react';
 import { ArticleLayoutProvider } from '@/blocks/article-layout/Provider';
+import allComponentLinks from '@/components/pages-sections/all-components/allComponentLinks';
 
 const navSideLinks = [
   {
@@ -9,6 +10,7 @@ const navSideLinks = [
   {
     name: 'Components',
     href: '/components/all',
+    childLinks: allComponentLinks,
   },
 ];
 

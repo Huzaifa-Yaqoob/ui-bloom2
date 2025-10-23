@@ -20,7 +20,7 @@ function GitHubStars() {
 
   return (
     <a
-      href={'www.github.com'}
+      href={'https://github.com/Huzaifa-Yaqoob/ui-bloom2'}
       target={'_blank'}
       rel={'noreferrer'}
       className={'hover:text-primary flex items-center gap-1'}

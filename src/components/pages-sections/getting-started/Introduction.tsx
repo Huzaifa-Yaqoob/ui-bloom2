@@ -1,4 +1,4 @@
-import { H2, P } from '@/registery/components/typography/typography';
+import { H2, P } from '@/registry/components/typography/typography';
 import Section from '@/components/common/Section';
 
 function Introduction() {
