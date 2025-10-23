@@ -8,6 +8,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import CodeBlock from '@/blocks/code-blocks/CodeBlock';
 import BashTab from '@/blocks/code-blocks/varients/BashTab';
+import { Separator } from '@/components/ui/separator';
 
 const code = `{
   "$schema": "https://ui.shadcn.com/schema.json",
@@ -30,7 +31,7 @@ const code = `{
     "hooks": "@/hooks"
   },
   "registries": {
-    "@ui-bloom": "${process.env.NEXT_PUBLIC_HOMEPAGE_URL}/public/{name}.json" // [!code ++]
+    "@ui-bloom": "${process.env.NEXT_PUBLIC_HOMEPAGE_URL}/r/{name}.json" // [!code ++]
   }
 }`;
 
@@ -47,6 +48,10 @@ function Installation() {
           {
             name: 'Update component.json',
             href: '#installation-update-component-json',
+          },
+          {
+            name: 'Add components',
+            href: '#installation-add-components',
           },
         ],
       },
@@ -95,20 +100,21 @@ function Installation() {
       </div>
       <div id="installation-add-components">
         <H4>Add Components to Your Project</H4>
+
         <P>
           Once you’ve updated your <Code>component.json</Code>, adding any
           component from the registry becomes effortless. You can simply run the
           following command:
         </P>
 
-        <BashTab value={'dd'} />
+        <BashTab value={'field-renderer'} />
 
         <P>
           That’s it — the component will be added automatically using your
           updated configuration.
         </P>
 
-        {/*<Separator className="my-6" />*/}
+        <Separator className="my-6" />
 
         <P>
           However, if you haven’t updated <Code>component.json</Code>, you can
@@ -116,12 +122,29 @@ function Installation() {
           as shown below:
         </P>
 
-        <BashTab value={'dd'} />
+        <BashTab
+          value={`${process.env.NEXT_PUBLIC_HOMEPAGE_URL}/r/field-renderer.json`}
+          prefix={null}
+        />
 
         <P>
           Both methods work perfectly, but updating <Code>component.json</Code>{' '}
           keeps your workflow cleaner and your commands shorter — especially
           when adding multiple components.
+        </P>
+
+        <P>
+          Throughout this documentation, we’ll be using the{' '}
+          <strong>first method</strong> (based on your updated{' '}
+          <Code>component.json</Code>) as the default approach. It’s the
+          recommended setup for maintaining consistency, ensuring smooth
+          updates, and keeping your project organized as it grows.
+        </P>
+
+        <P>
+          By following this approach, you’ll be aligned with the best practices
+          used across our registry — making future installations and
+          integrations simpler and more predictable.
         </P>
       </div>
     </Section>

@@ -10,7 +10,7 @@ interface BashTabProps {
   prefix?: string | null;
 }
 
-function BashTab({ value, prefix = 'ui-bloom/' }: BashTabProps) {
+function BashTab({ value, prefix = '@ui-bloom/' }: BashTabProps) {
   const [tabValue, setTabValue] = useState<'npm' | 'pnpm' | 'yarn' | 'bun'>(
     'npm'
   );
