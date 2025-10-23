@@ -1,44 +1,65 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function useActiveSection(sectionIds: string[]) {
   const [activeId, setActiveId] = useState<string | null>(null);
+  const observer = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Find all intersecting entries
-        const intersectingEntries = entries.filter((e) => e.isIntersecting);
+    // Cleanup previous observer
+    if (observer.current) {
+      observer.current.disconnect();
+    }
 
-        if (intersectingEntries.length > 0) {
-          // Sort them by their position on the page
-          intersectingEntries.sort(
+    observer.current = new IntersectionObserver(
+      (entries) => {
+        const intersecting = entries.filter((e) => e.isIntersecting);
+
+        if (intersecting.length > 0) {
+          // Sort by position on the page
+          intersecting.sort(
             (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
           );
 
-          // The "most active" is the one closest to the top of the viewport
-          setActiveId(intersectingEntries[0].target.id);
+          // Default to the topmost visible section
+          let activeEntry = intersecting[0];
+
+          // If multiple are intersecting, check for nested sections
+          if (intersecting.length > 1) {
+            // Find if one is a child of another, prefer the child
+            const child = intersecting.find((entry) => {
+              const parent = intersecting.find(
+                (p) => p.target.contains(entry.target) && p !== entry
+              );
+              return parent !== undefined;
+            });
+
+            if (child) {
+              activeEntry = child;
+            }
+          }
+
+          setActiveId(activeEntry.target.id);
         }
       },
       {
-        // Trigger when the top of the section is 40% down from the top of the viewport
-        // and the bottom is 40% up from the bottom of the viewport.
-        rootMargin: '-20% 0px -60% 0px',
+        // A thin "line" at 25% from the top of the viewport.
+        // A section is active if its top passes this line.
+        rootMargin: '-25% 0px -75% 0px',
         threshold: 0,
       }
     );
 
+    const currentObserver = observer.current;
+
     sectionIds.forEach((id) => {
       const el = document.getElementById(id);
-      if (el) observer.observe(el);
+      if (el) currentObserver.observe(el);
     });
 
     return () => {
-      sectionIds.forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) observer.unobserve(el);
-      });
+      currentObserver.disconnect();
     };
   }, [sectionIds]);
 
