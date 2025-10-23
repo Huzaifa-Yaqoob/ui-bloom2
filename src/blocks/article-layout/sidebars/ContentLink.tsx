@@ -28,12 +28,14 @@ const extractSectionIds = (links: SideLink[] | undefined): string[] => {
 function ContentLinks() {
   const { contentLinks } = useArticleLayout();
 
+  const sectionIds = extractSectionIds(contentLinks);
+  const activeSectionId = useActiveSection(sectionIds);
+
+  console.log(activeSectionId, 'activeSectionId');
+
   if (!contentLinks || contentLinks.length === 0) {
     return null;
   }
-
-  const sectionIds = extractSectionIds(contentLinks);
-  const activeSectionId = useActiveSection(sectionIds);
 
   return (
     <div>

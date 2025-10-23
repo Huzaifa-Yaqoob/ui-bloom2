@@ -152,10 +152,7 @@ function PComponent({
   const Comp = asChild ? Slot : 'p';
   return (
     <Comp
-      className={cn(
-        'text-sm leading-6 sm:text-base md:leading-7 [&:not(:first-child)]:mt-4 sm:[&:not(:first-child)]:mt-6',
-        className
-      )}
+      className={cn('text-sm leading-6 sm:text-base md:leading-7', className)}
       {...props}
     >
       {children}

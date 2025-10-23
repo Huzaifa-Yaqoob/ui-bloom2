@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Github } from '@/icons/GitHub';
+import { Github } from '@/icons';
 import { formatNumber } from '@/lib/formatNumber';
 
 function GitHubStars() {

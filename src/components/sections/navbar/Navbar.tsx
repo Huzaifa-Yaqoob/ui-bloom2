@@ -1,5 +1,5 @@
 import Section from '@/components/common/Section';
-import { UIBloomIcon } from '@/icons/inedx';
+import { UIBloomIcon } from '@/icons';
 import NavLinks from '@/components/sections/navbar/NavLinks';
 import NavFeatures from '@/components/sections/navbar/NavFeatures';
 import NavDrawer from '@/components/sections/navbar/NavDrawer';

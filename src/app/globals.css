@@ -90,6 +90,17 @@
     --sidebar-accent-foreground: var(--foreground);
     --sidebar-border: var(--border);
     --sidebar-ring: var(--primary);
+
+    /*Colors for syntax highlighting*/
+    --sh-class: #2d5e9d;
+    --sh-identifier: #354150;
+    --sh-sign: #8996a3;
+    --sh-property: #0550ae;
+    --sh-entity: #249a97;
+    --sh-jsxliterals: #6266d1;
+    --sh-string: #00a99a;
+    --sh-keyword: #f47067;
+    --sh-comment: #a19595;
 }
 
 @layer base {
@@ -112,18 +123,18 @@
 }
 
 ::-webkit-scrollbar {
-    width: 6px; /* scrollbar width */
-    height: 6px;
+    width: 3px; /* scrollbar width */
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--muted); /* track color */
-    border-radius: 8px;
+    margin: 8px;
+    background: transparent; /* track color */
+    border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--muted-foreground); /* scrollbar handle color */
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -140,4 +151,43 @@
   ::-webkit-scrollbar {
     display: none;
   }
+}
+
+.shiki {
+    counter-reset: step;
+    counter-increment: step 0;
+    .line {
+        @apply border-l-4 border-transparent;
+        &::before {
+            counter-increment: step;
+            @apply mr-6 inline-block w-4 border-transparent text-right text-neutral-600 content-[counter(step)];
+        }
+        &.highlighted,
+        &.diff {
+            @apply -ml-4 -mr-5 inline-block w-[calc(100%+(theme(spacing.5)+theme(spacing.4)))] pl-4 pr-5;
+        }
+        &.highlighted {
+            @apply border-neutral-500 bg-neutral-800;
+        }
+        &.diff {
+            &.add,
+            &.remove {
+                span:first-child::before {
+                    @apply -ml-4 inline-flex w-4;
+                }
+            }
+            &.add {
+                @apply border-blue-500 bg-blue-500/25 before:text-blue-500;
+                span:first-child::before {
+                    @apply text-blue-500 content-["+"];
+                }
+            }
+            &.remove {
+                @apply border-orange-500 bg-orange-500/30 opacity-70 *:!text-neutral-400 before:text-orange-500;
+                span:first-child::before {
+                    @apply text-orange-500 content-["-"];
+                }
+            }
+        }
+    }
 }

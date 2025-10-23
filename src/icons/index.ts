@@ -4,3 +4,8 @@ export { Heart } from './Heart';
 export { SquareMenu } from './SquareMenu';
 export { LinkMenu } from './LinkMenu';
 export { ContentMenu } from './ContentMenu';
+export { Tick } from './Tick';
+export { Copy } from './Copy';
+export { JsonFile } from './JsonFile';
+export { ReactFile } from './ReactFile';
+export { DefaultFile } from './DefaultFile';

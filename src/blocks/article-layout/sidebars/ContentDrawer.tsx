@@ -7,7 +7,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from '@/components/ui/drawer';
-import { ContentMenu } from '@/icons/inedx';
+import { ContentMenu } from '@/icons';
 import { useEffect, useState } from 'react';
 import { BreakPoints, useWindowWidth } from '@/registery/hooks/useWindowWidth';
 import ContentLink from '@/blocks/article-layout/sidebars/ContentLink';
@@ -27,7 +27,7 @@ function ContentDrawer({ fromSideBar = false }: { fromSideBar: boolean }) {
     <Drawer direction={'right'} open={open} onOpenChange={setOpen}>
       <DrawerTrigger>
         {fromSideBar ? (
-          <div className={'flex items-center gap-2'}>
+          <div className={'mb-4 flex items-center gap-2'}>
             <ContentMenu />
             <span className={'font-bold'}>Content Menu</span>
           </div>

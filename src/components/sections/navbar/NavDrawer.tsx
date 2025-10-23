@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { BreakPoints, useWindowWidth } from '@/registery/hooks/useWindowWidth';
-import { SquareMenu } from '@/icons/inedx';
+import { SquareMenu } from '@/icons';
 
 function NavDrawer() {
   const pathname = usePathname();

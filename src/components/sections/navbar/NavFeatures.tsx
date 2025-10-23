@@ -1,4 +1,4 @@
-import { Github } from '@/icons/inedx';
+import { Github } from '@/icons';
 import GitHubStars from '@/components/common/RepoStars';
 
 function NavFeatures() {
