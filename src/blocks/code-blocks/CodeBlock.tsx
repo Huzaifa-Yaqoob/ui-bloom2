@@ -20,8 +20,8 @@ const FileIcon: Record<string, JSX.Element> = {
 
 function CodeBlock({ code, lang, theme, filename }: Props) {
   return (
-    <div className={'rounded-lg p-4 md:p-8 lg:p-12'}>
-      <div className={'rounded-lg bg-neutral-900'}>
+    <div className={'p-4 md:p-8 lg:p-12'}>
+      <div className={'bg-code-background rounded-lg'}>
         <div className={'flex items-center justify-between px-4 py-2'}>
           {filename && (
             <div
@@ -29,7 +29,7 @@ function CodeBlock({ code, lang, theme, filename }: Props) {
                 'flex items-center gap-2 text-sm font-medium text-white'
               }
             >
-              <span className={'ml-2 text-xs text-neutral-400'}>
+              <span className={'text-code-foreground ml-2 text-xs'}>
                 {FileIcon[lang || 'default']}
               </span>
               {filename}

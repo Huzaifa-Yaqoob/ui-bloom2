@@ -7,6 +7,7 @@ import { useArticleLayout } from '@/blocks/article-layout/useArticleLayout';
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import CodeBlock from '@/blocks/code-blocks/CodeBlock';
+import BashTab from '@/blocks/code-blocks/varients/BashTab';
 
 const code = `{
   "$schema": "https://ui.shadcn.com/schema.json",
@@ -29,7 +30,7 @@ const code = `{
     "hooks": "@/hooks"
   },
   "registries": {
-    "@ui-bloom": "https://v0.dev/chat/b/{name}" // [!code ++]
+    "@ui-bloom": "${process.env.NEXT_PUBLIC_HOMEPAGE_URL}/public/{name}.json" // [!code ++]
   }
 }`;
 
@@ -74,18 +75,54 @@ function Installation() {
           .
         </P>
       </div>
-      <div id={'installation-update-component-json'} className={'space-y-0'}>
-        <span className={'space-x-2'}>
-          <H4 className={'inline-block'}>Update </H4>
-          <Code className={'inline-block'} asChild={true}>
+      <div id="installation-update-component-json" className="space-y-0">
+        <span className="space-x-2">
+          <H4 className="inline-block">Update</H4>
+          <Code className="inline-block" asChild={true}>
             <H4>component.json</H4>
           </Code>
         </span>
-        <P className={'pt-0'}>
-          Update your <Code>component.json</Code> with the code that is provided
-          under this so you can easily add the components to your project.
+        <P className="pt-0">
+          Update your <Code>component.json</Code> file using the configuration
+          shown below. This will allow you to seamlessly add and manage
+          components from the registry in your project.
+          <br />
+          If you already have an existing <Code>component.json</Code> file,
+          simply merge or add the <strong>highlighted lines</strong> instead of
+          replacing the entire file.
         </P>
-        <CodeBlock code={code} lang={'json'} filename={'component.json'} />
+        <CodeBlock code={code} lang="json" filename="component.json" />
+      </div>
+      <div id="installation-add-components">
+        <H4>Add Components to Your Project</H4>
+        <P>
+          Once you’ve updated your <Code>component.json</Code>, adding any
+          component from the registry becomes effortless. You can simply run the
+          following command:
+        </P>
+
+        <BashTab value={'dd'} />
+
+        <P>
+          That’s it — the component will be added automatically using your
+          updated configuration.
+        </P>
+
+        {/*<Separator className="my-6" />*/}
+
+        <P>
+          However, if you haven’t updated <Code>component.json</Code>, you can
+          still add components manually. The command will just be a bit longer,
+          as shown below:
+        </P>
+
+        <BashTab value={'dd'} />
+
+        <P>
+          Both methods work perfectly, but updating <Code>component.json</Code>{' '}
+          keeps your workflow cleaner and your commands shorter — especially
+          when adding multiple components.
+        </P>
       </div>
     </Section>
   );

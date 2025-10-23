@@ -37,6 +37,10 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-code-background: var(--code-background);
+  --color-code-foreground: var(--code-foreground);
+  --color-code-accent: var(--code-accent);
+  --color-code-accent-foreground: var(--code-accent-foreground);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -92,15 +96,10 @@
     --sidebar-ring: var(--primary);
 
     /*Colors for syntax highlighting*/
-    --sh-class: #2d5e9d;
-    --sh-identifier: #354150;
-    --sh-sign: #8996a3;
-    --sh-property: #0550ae;
-    --sh-entity: #249a97;
-    --sh-jsxliterals: #6266d1;
-    --sh-string: #00a99a;
-    --sh-keyword: #f47067;
-    --sh-comment: #a19595;
+    --code-background: oklch(0.15 0.03 150);
+    --code-foreground: oklch(0.97 0.02 95);
+    --code-accent: oklch(0.7 0.1 95);
+    --code-accent-foreground: oklch(0.25 0.05 150);
 }
 
 @layer base {
@@ -179,13 +178,13 @@
             &.add {
                 @apply border-blue-500 bg-blue-500/25 before:text-blue-500;
                 span:first-child::before {
-                    @apply text-blue-500 content-["+"];
+                    @apply text-blue-500 content-['+'];
                 }
             }
             &.remove {
                 @apply border-orange-500 bg-orange-500/30 opacity-70 *:!text-neutral-400 before:text-orange-500;
                 span:first-child::before {
-                    @apply text-orange-500 content-["-"];
+                    @apply text-orange-500 content-['-'];
                 }
             }
         }
