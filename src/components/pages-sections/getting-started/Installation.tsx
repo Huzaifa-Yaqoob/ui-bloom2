@@ -9,6 +9,8 @@ import { cn } from '@/lib/utils';
 import CodeBlock from '@/blocks/code-blocks/CodeBlock';
 import BashTab from '@/blocks/code-blocks/varients/BashTab';
 import { Separator } from '@/components/ui/separator';
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
+import { Info } from '@/icons';
 
 const code = `{
   "$schema": "https://ui.shadcn.com/schema.json",
@@ -182,6 +184,17 @@ function Installation() {
           component from the registry. You can now explore more components,
           utilities, and hooks to build faster and with greater consistency.
         </P>
+
+        <Alert variant={'default'} className={'my-4'}>
+          <AlertTitle className={'flex items-center gap-1 text-sm font-medium'}>
+            <Info />
+            Note:
+          </AlertTitle>
+          <AlertDescription>
+            You can customize the component after adding it — every component is
+            fully open-source and editable.
+          </AlertDescription>
+        </Alert>
       </div>
     </Section>
   );
