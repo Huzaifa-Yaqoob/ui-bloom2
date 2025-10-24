@@ -4,6 +4,9 @@
   "type": "registry:ui",
   "title": "Typography",
   "description": "A comprehensive set of typography components including headings (H1-H6), paragraphs, blockquotes, code blocks, and text variants with responsive sizing and styling.",
+  "dependencies": [
+    "@radix-ui/react-slot"
+  ],
   "files": [
     {
       "path": "src/registry/components/typography/typography.tsx",

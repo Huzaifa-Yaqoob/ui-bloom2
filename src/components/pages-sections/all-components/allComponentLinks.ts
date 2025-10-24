@@ -2,23 +2,23 @@ import { Link } from '@/blocks/article-layout/Provider';
 
 const allComponentLinks: Link[] = [
   {
-    href: '/docs/field-renderer',
+    href: '/docs/components/field-renderer',
     name: 'Field Renderer',
   },
   {
-    href: '/docs/logical-pagination',
+    href: '/docs/components/logical-pagination',
     name: 'Logical Pagination',
   },
   {
-    href: '/docs/password-input',
+    href: '/docs/components/password-input',
     name: 'Password Input',
   },
   {
-    href: '/docs/react-select-input',
+    href: '/docs/components/react-select-input',
     name: 'React Select Input',
   },
   {
-    href: '/docs/typography',
+    href: '/docs/components/typography',
     name: 'Typography',
   },
 ];
