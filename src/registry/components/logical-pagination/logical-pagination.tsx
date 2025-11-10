@@ -3,7 +3,7 @@
 import { useMemo, memo, ComponentProps, FC } from 'react';
 import { Button } from '@/components/ui/button';
 import { Ellipsis, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useWindowWidth, BreakPoints } from '../hooks/useWindowWidth';
+import { useWindowWidth, BreakPoints } from '../../hooks/useWindowWidth';
 import { cn } from '@/lib/utils';
 
 interface LogicalPaginationProps {
