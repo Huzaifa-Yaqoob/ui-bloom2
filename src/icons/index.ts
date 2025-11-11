@@ -11,3 +11,5 @@ export { ReactFile } from './ReactFile';
 export { DefaultFile } from './DefaultFile';
 export { Info } from './Info';
 export { Bulb } from './Bulb';
+export { JsFile } from './JsFile';
+export { TsFile } from './TsFile';

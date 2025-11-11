@@ -25,7 +25,7 @@ export default function CopyToClipboard({ code }: { code: string }) {
       onClick={copyToClipboard}
       variant="ghost"
       size="icon"
-      className="text-secondary size-6"
+      className="text-secondary size-8"
     >
       {isCopied ? <Tick /> : <Copy />}
     </Button>

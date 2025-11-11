@@ -7,7 +7,7 @@ const contentLinks: Link[] = [
   },
   {
     name: 'Installation',
-    href: '#field-renderer-installation',
+    href: '#logical-pagination-installation',
   },
 ];
 
