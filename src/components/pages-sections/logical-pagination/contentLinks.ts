@@ -9,6 +9,10 @@ const contentLinks: Link[] = [
     name: 'Installation',
     href: '#logical-pagination-installation',
   },
+  {
+    name: 'Usage',
+    href: '#logical-pagination-usage',
+  },
 ];
 
 export default contentLinks;

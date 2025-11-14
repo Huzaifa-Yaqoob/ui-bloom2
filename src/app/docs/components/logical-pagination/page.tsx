@@ -3,6 +3,7 @@ import Intro from '@/components/pages-sections/logical-pagination/Intro';
 import contentLinks from '@/components/pages-sections/logical-pagination/contentLinks';
 import ContentLinkSetter from '@/components/common/ContentLinkSetter';
 import Installation from '@/components/pages-sections/logical-pagination/Installation';
+import Preview from '@/components/pages-sections/logical-pagination/Preview';
 
 function Page() {
   return (
@@ -10,6 +11,7 @@ function Page() {
       <ContentLinkSetter links={contentLinks} />
       <Intro />
       <Installation />
+      <Preview />
     </PageSection>
   );
 }
