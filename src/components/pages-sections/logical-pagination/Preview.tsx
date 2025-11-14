@@ -7,7 +7,7 @@ import CodePreview from '@/blocks/code-blocks/varients/CodePreview';
 
 function Preview() {
   return (
-    <Section id={'logical-pagination-usage'}>
+    <Section id={'logical-pagination-preview'}>
       <H2>Preview</H2>
       <P>
         Here's how to use the <strong>Logical Pagination</strong> component:

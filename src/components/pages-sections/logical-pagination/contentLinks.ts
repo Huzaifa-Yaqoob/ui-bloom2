@@ -10,8 +10,8 @@ const contentLinks: Link[] = [
     href: '#logical-pagination-installation',
   },
   {
-    name: 'Usage',
-    href: '#logical-pagination-usage',
+    name: 'Preview',
+    href: '#logical-pagination-preview',
   },
 ];
 
