@@ -38,7 +38,7 @@ export default function Code({
 
   return (
     <div
-      className="border-border max-h-[600px] overflow-y-auto border-t-2 text-sm [&_code]:block [&_code]:w-fit [&_code]:min-w-full [&>pre]:overflow-x-auto [&>pre]:!bg-transparent [&>pre]:py-3 [&>pre]:pr-5 [&>pre]:pl-4 [&>pre]:leading-snug"
+      className="border-border max-h-[600px] overflow-x-scroll overflow-y-auto border-t-2 text-sm [&_code]:block [&_code]:w-fit [&_code]:min-w-full [&>pre]:overflow-x-auto [&>pre]:!bg-transparent [&>pre]:py-3 [&>pre]:pr-5 [&>pre]:pl-4 [&>pre]:leading-snug"
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );
