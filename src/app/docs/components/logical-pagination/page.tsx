@@ -4,7 +4,7 @@ import contentLinks from '@/components/pages-sections/logical-pagination/content
 import ContentLinkSetter from '@/components/common/ContentLinkSetter';
 import Installation from '@/components/pages-sections/logical-pagination/Installation';
 import Preview from '@/components/pages-sections/logical-pagination/Preview';
-import PropsTable from '@/components/pages-sections/logical-pagination/PropsTable';
+import PropsInfo from '@/components/pages-sections/logical-pagination/PropsInfo';
 
 function Page() {
   return (
@@ -13,7 +13,7 @@ function Page() {
       <Intro />
       <Installation />
       <Preview />
-      <PropsTable />
+      <PropsInfo />
     </PageSection>
   );
 }

@@ -1,15 +1,15 @@
 import Section from '@/components/common/Section';
 import { H2, P } from '@/registry/components/typography/typography';
 import PropsTable from '@/components/common/PropsTable';
-import { propsData } from './propsData';
+import { logicalPaginationPropsData } from './propsData';
 
-function Table() {
+function PropsInfo() {
   return (
     <Section id={'logical-pagination-props'}>
       <H2>Props Table</H2>
-      <PropsTable data={propsData} />
+      <PropsTable data={logicalPaginationPropsData} />
     </Section>
   );
 }
 
-export default Table;
+export default PropsInfo;
