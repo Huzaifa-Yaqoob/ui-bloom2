@@ -13,6 +13,10 @@ const contentLinks: Link[] = [
     name: 'Preview',
     href: '#logical-pagination-preview',
   },
+  {
+    name: 'Props',
+    href: '#logical-pagination-props',
+  },
 ];
 
 export default contentLinks;

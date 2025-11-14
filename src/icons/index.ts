@@ -13,3 +13,4 @@ export { Info } from './Info';
 export { Bulb } from './Bulb';
 export { JsFile } from './JsFile';
 export { TsFile } from './TsFile';
+export { InfoIcon } from './InfoIcon';
