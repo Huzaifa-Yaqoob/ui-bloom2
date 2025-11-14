@@ -7,11 +7,15 @@ import CodePreview from '@/blocks/code-blocks/varients/CodePreview';
 
 function Preview() {
   return (
-    <Section id={'logical-pagination-preview'}>
+    <Section id="logical-pagination-preview">
       <H2>Preview</H2>
       <P>
-        Here's how to use the <strong>Logical Pagination</strong> component:
+        Below is an interactive preview of the{' '}
+        <strong>Logical Pagination</strong>
+        component. This example demonstrates how it behaves in a real layout,
+        including how it adapts based on the current page.
       </P>
+
       <CodePreview
         children={<PreviewComponent />}
         code={{ tsxCode: PreviewCode }}
