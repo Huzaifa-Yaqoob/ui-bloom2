@@ -14,9 +14,7 @@ function PropDescription({ description }: { description?: ReactNode }) {
       <TooltipTrigger className="hover:bg-accent ml-1 inline-block rounded align-middle">
         <InfoIcon width={18} height={18} />
       </TooltipTrigger>
-      <TooltipContent>
-        <p>{description}</p>
-      </TooltipContent>
+      <TooltipContent className={'max-w-64'}>{description}</TooltipContent>
     </Tooltip>
   );
 }

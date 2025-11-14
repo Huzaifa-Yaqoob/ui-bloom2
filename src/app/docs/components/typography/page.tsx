@@ -4,6 +4,7 @@ import contentLinks from '@/components/pages-sections/typography/contentLinks';
 import ContentLinkSetter from '@/components/common/ContentLinkSetter';
 import Installation from '@/components/pages-sections/typography/Installation';
 import Preview from '@/components/pages-sections/typography/Preview';
+import PropsInfo from '@/components/pages-sections/typography/PropsInfo';
 
 function TypographiesPage() {
   return (
@@ -12,6 +13,7 @@ function TypographiesPage() {
       <Intro />
       <Installation />
       <Preview />
+      <PropsInfo />
     </PageSection>
   );
 }

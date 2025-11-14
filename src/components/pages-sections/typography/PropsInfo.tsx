@@ -1,13 +1,13 @@
 import Section from '@/components/common/Section';
 import { H2, P } from '@/registry/components/typography/typography';
 import PropsTable from '@/components/common/PropsTable';
-import { logicalPaginationPropsData } from './propsData';
+import { TypographyPropsData } from './propsData';
 
 function PropsInfo() {
   return (
-    <Section id={'logical-pagination-props'}>
+    <Section id={'typography-props'}>
       <H2>Props Table</H2>
-      <PropsTable data={logicalPaginationPropsData} />
+      <PropsTable data={TypographyPropsData} />
     </Section>
   );
 }
