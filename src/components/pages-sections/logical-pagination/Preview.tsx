@@ -14,7 +14,7 @@ function Preview() {
       </P>
       <CodePreview
         children={<PreviewComponent />}
-        code={{ tsxCode: PreviewCode, jsCode: '' }}
+        code={{ tsxCode: PreviewCode }}
       />
     </Section>
   );
