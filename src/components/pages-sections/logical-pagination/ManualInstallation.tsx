@@ -2,7 +2,7 @@ import JsTsCodeBlock from '@/blocks/code-blocks/varients/JsTsCodeBlock';
 import {
   jsCode,
   tsCode,
-} from '@/components/pages-sections/use-windo-width/codeToCopy';
+} from '@/components/pages-sections/use-window-width/codeToCopy';
 import { P } from '@/registry/components/typography/typography';
 import JsxTsxCode from '@/blocks/code-blocks/varients/JsxTsxCode';
 import { jsxCode, tsxCode } from './codeToCopy';

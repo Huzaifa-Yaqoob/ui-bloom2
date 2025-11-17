@@ -11,13 +11,7 @@ function Components() {
       <ContentLinkSetter links={contentLinks} />
       <Introduction />
       <Installation />
-      <DocFooter
-        nextLink={{
-          name: 'Components',
-          href: '/docs/components',
-        }}
-        prevLink={null}
-      />
+      <DocFooter />
     </Page>
   );
 }

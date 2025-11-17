@@ -1,6 +1,6 @@
 'use client';
 
-import allComponentLinks from '@/components/pages-sections/all-components/allComponentLinks';
+import allHooksLinks from '@/components/pages-sections/all-hooks/allHooksLinks';
 import Link from 'next/link';
 import { Link as LinkType } from '@/blocks/article-layout/Provider';
 import { Input } from '@/components/ui/input';
@@ -9,7 +9,7 @@ import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 function ComponentsBox() {
-  const [links, setLinks] = useState<LinkType[]>(allComponentLinks);
+  const [links, setLinks] = useState<LinkType[]>(allHooksLinks);
 
   return (
     <div className={'mt-4 rounded-lg border p-4 sm:pt-8'}>
@@ -17,12 +17,12 @@ function ComponentsBox() {
         <Input
           onChange={(e) => {
             const search = e.target.value.toLowerCase();
-            const filteredLinks = allComponentLinks.filter((link) =>
+            const filteredLinks = allHooksLinks.filter((link) =>
               link.name.toLowerCase().includes(search)
             );
             setLinks(filteredLinks);
           }}
-          placeholder="Search Components"
+          placeholder="Search Hooks"
           className="border-primary max-w-sm"
         />
       </div>

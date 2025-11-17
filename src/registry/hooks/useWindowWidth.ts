@@ -24,11 +24,11 @@ const useWindowWidth = (): number | undefined => {
 
 // custom breakpoints for screen to make component responsive
 const BreakPoints = {
-  sm: 640,
-  md: 768,
-  lg: 1024,
-  xl: 1280,
-  '2xl': 1536,
+  sm: '640px',
+  md: '768px',
+  lg: '1024px',
+  xl: '1280px',
+  '2xl': '1536px',
 };
 
 export { useWindowWidth, BreakPoints };
