@@ -4,6 +4,7 @@ import contentLinks from '@/components/pages-sections/use-async-runner/contentLi
 import ContentLinkSetter from '@/components/common/ContentLinkSetter';
 import Installation from '@/components/pages-sections/use-async-runner/Installation';
 import DocFooter from '@/components/sections/doc-footer/DocFooter';
+import Preview from '@/components/pages-sections/use-async-runner/Preview';
 
 function Page() {
   return (
@@ -11,6 +12,7 @@ function Page() {
       <ContentLinkSetter links={contentLinks} />
       <Intro />
       <Installation />
+      <Preview />
       <DocFooter />
     </PageSection>
   );

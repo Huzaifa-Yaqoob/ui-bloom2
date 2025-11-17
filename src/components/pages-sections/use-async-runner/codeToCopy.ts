@@ -17,7 +17,7 @@ function useAsyncRunner<Args extends unknown[], Return>({
   const [isSuccess, setIsSuccess] = useState(false);
   const [isFailure, setIsFailure] = useState(false);
   const [data, setData] = useState<Return | null>(null);
-  const [error, setError] = useState<unknown>(null);
+  const [error, setError] = useState<any>(null);
 
   const run = async (...args: Args): Promise<Return | undefined> => {
     setIsPending(true);

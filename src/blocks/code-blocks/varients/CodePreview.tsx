@@ -4,7 +4,7 @@ import JsxTsxCodeBlock from '@/blocks/code-blocks/varients/JsxTsxCode';
 
 interface CodePreviewProps {
   children: ReactNode;
-  code: { tsxCode: string; jsCode?: string };
+  code: { tsxCode: string; jsxCode?: string };
 }
 
 function CodePreview({ children, code }: CodePreviewProps) {
@@ -26,7 +26,7 @@ function CodePreview({ children, code }: CodePreviewProps) {
       <TabsContent value={'code'}>
         <JsxTsxCodeBlock
           tsxcode={code.tsxCode}
-          jsxcode={code?.jsCode || code.tsxCode}
+          jsxcode={code?.jsxCode || code.tsxCode}
           filename={'Example'}
         />
       </TabsContent>
