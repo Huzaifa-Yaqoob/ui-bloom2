@@ -17,7 +17,7 @@ function CodePreview({ children, code }: CodePreviewProps) {
       <TabsContent value={'preview'}>
         <div
           className={
-            'bg-muted flex max-h-[500px] min-h-64 items-start justify-center overflow-y-auto rounded-lg p-4'
+            'bg-muted flex max-h-[500px] min-h-64 items-center justify-center overflow-y-auto rounded-lg p-4'
           }
         >
           {children}
